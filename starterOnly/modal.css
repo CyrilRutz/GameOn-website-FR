@@ -27,7 +27,8 @@ p {
 }
 
 img {
-  padding-right: 1rem;
+  width:245px;
+  height:45px;
 }
 
 .topnav {
