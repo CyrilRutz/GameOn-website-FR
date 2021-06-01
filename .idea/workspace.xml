@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="91336ad4-21a7-445e-ad9d-bdb0f2e6d51d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/starterOnly/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/starterOnly/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/starterOnly/modal.css" beforeDir="false" afterPath="$PROJECT_DIR$/starterOnly/modal.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/starterOnly/modal.js" beforeDir="false" afterPath="$PROJECT_DIR$/starterOnly/modal.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="showPreview" value="true" />
+  </component>
+  <component name="ProjectId" id="1rCCnlGyWmdsReFxVhApLZbHxLl" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="codeWithMe.voiceChat.enabledByDefault" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RunManager" selected="JavaScript Debug.index.html">
+    <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/GameOn-website-FR/starterOnly/index.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="modal.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="modal.js" working-dir="$PROJECT_DIR$/starterOnly">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript Debug.index.html" />
+        <item itemvalue="Node.js.modal.js" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="91336ad4-21a7-445e-ad9d-bdb0f2e6d51d" name="Default Changelist" comment="" />
+      <created>1618470856087</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1618470856087</updated>
+      <workItem from="1618470858998" duration="2797000" />
+      <workItem from="1618478187190" duration="283000" />
+      <workItem from="1618924351744" duration="6803000" />
+      <workItem from="1618933539770" duration="1194000" />
+      <workItem from="1618992459970" duration="4300000" />
+      <workItem from="1619071370728" duration="3440000" />
+      <workItem from="1619164508752" duration="3155000" />
+      <workItem from="1619444855261" duration="2113000" />
+      <workItem from="1619511279884" duration="1286000" />
+      <workItem from="1619594905383" duration="3783000" />
+      <workItem from="1619690304856" duration="61000" />
+      <workItem from="1619695324340" duration="4730000" />
+      <workItem from="1619700118793" duration="1292000" />
+      <workItem from="1619767420156" duration="2630000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="JavascriptDebugType">
+        <watch expression="modalValidation" />
+      </configuration>
+    </watches-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/GameOn_website_FR$index_html.dat" NAME="index.html Coverage Results" MODIFIED="1619699903000" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="WipCoverageRunner" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+  </component>
+</project>
