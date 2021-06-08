@@ -14,19 +14,20 @@ const formData = document.querySelectorAll(".formData");
 //ce que j'ai ajouté 
 const modalClose = modalbg.querySelector(".close");
 const modalValidation = modalbg.querySelector(".btn-submit");
-const firstName = document.getElementById ('first');
-const lastName = document.getElementById ('last');
-const eMail = document.getElementById ('email');
-const birthDate = document.getElementById ('birthdate');
-const quantityTournament = document.getElementById ('quantity');
-const loc1 = document.getElementById ('location1');
-const loc2 = document.getElementById ('location2');
-const loc3 = document.getElementById ('location3');
-const loc4 = document.getElementById ('location4');
-const loc5 = document.getElementById ('location5');
-const loc6 = document.getElementById ('location6');
+const firstName = modalbg.querySelector ('#first');
+const eMail = modalbg.querySelector ('#email');
+const lastName = modalbg.querySelector ('#last');
+const birthDate = modalbg.querySelector ('#birthdate');
+const quantityTournament = modalbg.querySelector ('#quantity');
+const loc1 = modalbg.querySelector ('#location1');
+const loc2 = modalbg.querySelector ('#location2');
+const loc3 = modalbg.querySelector ('#location3');
+const loc4 = modalbg.querySelector ('#location4');
+const loc5 = modalbg.querySelector ('#location5');
+const loc6 = modalbg.querySelector ('#location6');
+const utilisation = modalbg.querySelector ('#checkbox1')
 
-const dateFormat = /^\d{2}[./-]\d{2}[./-]\d{4}$/;
+const dateFormat = /^([0-2][0-9]|(3)[0-1])(\/)(((0)[0-9])|((1)[0-2]))(\/)\d{4}$/;
 const numbers = /^[0-9]+$/;
 
 // launch modal event
@@ -44,26 +45,32 @@ function closeModal() {
 }
 //validation du formulaire
 modalValidation.addEventListener("click", formValidation);
-function formValidation(){
+function formValidation(send){
     if (firstName.value.length < 3) {
-    first.dataset.error===true;
+      firstName.parentNode.setAttribute("data-error-visible","true");
 } 
     if (lastName.value.length < 3) { 
-      first.dataset.error===true;
+      lastName.parentNode.setAttribute("data-error-visible","true");
+
 } 
     if (!/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(eMail.value)) { 
-      first.dataset.error===true;
+      eMail.parentNode.setAttribute("data-error-visible","true");
 }
     if (!birthDate.value.match(dateFormat)) { 
-      first.dataset.error===true;
+      birthDate.parentNode.setAttribute("data-error-visible","true");
  }
     if (!quantityTournament.value.match(numbers)) { 
-      first.dataset.error===true;
+      quantityTournament.parentNode.setAttribute("data-error-visible", "true");
+  
 }
 
     if (!loc1.checked && !loc2.checked && !loc3.checked && !loc4.checked && !loc5.checked && !loc6.checked) { 
-      first.dataset.error===true;
-
+      loc1.parentNode.setAttribute("data-error-visible", "true");
+    }
+    if (!utilisation.checked){
+      utilisation.parentNode.setAttribute("data-error-visible","true");
+    }
+send.preventDefault();
 /*function formValidation(){
   const ids = ["first","last","email","quantity","birthDate","location1","location2","location3","location4","location5","location6"]
   const values = {}
@@ -76,16 +83,7 @@ function formValidation(){
     if (values.first.length <= 2){
       alert ("au moins trois caractères sont requis");
     }
-    values [id] = input.value;*/
-  };
+    values [id] = input.value;
+  };*/
 
-
-  //tester la valeur
-
-  //stocker le résultat du test  
-  //passer a la suivante 
-  //vérifier si un des résultat n'est pas bon 
-  //si pas bon message d'erreur en dessous du champ concerné 
-
-  //recommencer pour chaque champ 
 }
