@@ -5,7 +5,7 @@ function editNav() {
   } else {
     x.className = "topnav";
   }
-}
+} 
 
 // DOM Elements
 const modalbg = document.querySelector(".bground");
@@ -26,7 +26,6 @@ const loc4 = modalbg.querySelector ('#location4');
 const loc5 = modalbg.querySelector ('#location5');
 const loc6 = modalbg.querySelector ('#location6');
 const utilisation = modalbg.querySelector ('#checkbox1')
-
 const dateFormat = /^([0-2][0-9]|(3)[0-1])(\/)(((0)[0-9])|((1)[0-2]))(\/)\d{4}$/;
 const numbers = /^[0-9]+$/;
 
@@ -46,44 +45,24 @@ function closeModal() {
 //validation du formulaire
 modalValidation.addEventListener("click", formValidation);
 function formValidation(send){
-    if (firstName.value.length < 3) {
-      firstName.parentNode.setAttribute("data-error-visible","true");
-} 
-    if (lastName.value.length < 3) { 
-      lastName.parentNode.setAttribute("data-error-visible","true");
 
-} 
-    if (!/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(eMail.value)) { 
-      eMail.parentNode.setAttribute("data-error-visible","true");
-}
-    if (!birthDate.value.match(dateFormat)) { 
-      birthDate.parentNode.setAttribute("data-error-visible","true");
- }
-    if (!quantityTournament.value.match(numbers)) { 
-      quantityTournament.parentNode.setAttribute("data-error-visible", "true");
-  
-}
+        const isFirstValid = firstName.value.length >= 3;
+        const isLastValid = lastName.value.length >= 3;
+        const isEmailValid = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(eMail.value);
+        const isBirthdateValid = dateFormat.test(birthDate.value);
+        const isQuantityTournamentValid = numbers.test(quantityTournament.value);
+        const isLocValid = modalbg.querySelector("input[name=location]:checked") !== null;
+        const isTrue = (currentValue) => currentValue === true;
+        const isFalse  = (currentValue) => currentValue === false;
+        const validationArray = [isFirstValid,isLastValid,isEmailValid,isBirthdateValid,isQuantityTournamentValid,isLocValid]
+        if (validationArray.every(isTrue)){
+            console.log("merci de votre participation")
+        }
+        else{
+            validationArray.forEach(isFalse);
+            this.parentNode.setAttribute("data-error-visible",true);
 
-    if (!loc1.checked && !loc2.checked && !loc3.checked && !loc4.checked && !loc5.checked && !loc6.checked) { 
-      loc1.parentNode.setAttribute("data-error-visible", "true");
-    }
-    if (!utilisation.checked){
-      utilisation.parentNode.setAttribute("data-error-visible","true");
-    }
+        }
 send.preventDefault();
-/*function formValidation(){
-  const ids = ["first","last","email","quantity","birthDate","location1","location2","location3","location4","location5","location6"]
-  const values = {}
-  ids.forEach(function(id){
-    const input =modalbg.querySelector("#"+id);
-    if (input==null){
-      return("merci de renseigner ce champ");
-    }
-    console.log(values.first.length);
-    if (values.first.length <= 2){
-      alert ("au moins trois caractères sont requis");
-    }
-    values [id] = input.value;
-  };*/
 
 }
