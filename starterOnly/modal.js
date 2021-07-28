@@ -26,7 +26,7 @@ const loc4 = modalbg.querySelector ('#location4');
 const loc5 = modalbg.querySelector ('#location5');
 const loc6 = modalbg.querySelector ('#location6');
 const utilisation = modalbg.querySelector ('#checkbox1')
-const dateFormat = /^([0-2][0-9]|(3)[0-1])(\/)(((0)[0-9])|((1)[0-2]))(\/)\d{4}$/;
+const dateFormat = /([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))/;
 const numbers = /^[0-9]+$/;
 
 // launch modal event
@@ -52,17 +52,27 @@ function formValidation(send){
         const isBirthdateValid = dateFormat.test(birthDate.value);
         const isQuantityTournamentValid = numbers.test(quantityTournament.value);
         const isLocValid = modalbg.querySelector("input[name=location]:checked") !== null;
-        const isTrue = (currentValue) => currentValue === true;
-        const isFalse  = (currentValue) => currentValue === false;
-        const validationArray = [isFirstValid,isLastValid,isEmailValid,isBirthdateValid,isQuantityTournamentValid,isLocValid]
-        if (validationArray.every(isTrue)){
-            console.log("merci de votre participation")
-        }
-        else{
-            validationArray.forEach(isFalse);
-            this.parentNode.setAttribute("data-error-visible",true);
 
+        const validationArray = [
+            {input : firstName,data: isFirstValid},
+            {input : lastName,data: isLastValid},
+            {input : eMail,data: isEmailValid},
+            {input : birthDate,data: isBirthdateValid},
+            {input : quantityTournament,data: isQuantityTournamentValid},
+            {input : loc1,data: isLocValid},
+        ]
+       console.log(validationArray);
+        if (validationArray.every((currentValue) => currentValue.data === true)) {
+            console.log("youpi");
+            return;
         }
-send.preventDefault();
+             validationArray.forEach(function (currentValue){
+                 if (currentValue.data === false){
+                     currentValue.input.parentNode.setAttribute("data-error-visible",true);
+                 };
+             });
+
+
+    send.preventDefault();
 
 }

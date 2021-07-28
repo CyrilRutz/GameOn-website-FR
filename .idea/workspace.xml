@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="91336ad4-21a7-445e-ad9d-bdb0f2e6d51d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/starterOnly/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/starterOnly/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/starterOnly/modal.css" beforeDir="false" afterPath="$PROJECT_DIR$/starterOnly/modal.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/starterOnly/modal.js" beforeDir="false" afterPath="$PROJECT_DIR$/starterOnly/modal.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -36,7 +36,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="codeWithMe.voiceChat.enabledByDefault" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.tools" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected="JavaScript Debug.index.html">
@@ -75,6 +75,10 @@
       <workItem from="1619695324340" duration="4730000" />
       <workItem from="1619700118793" duration="1292000" />
       <workItem from="1619767420156" duration="2630000" />
+      <workItem from="1623167621357" duration="821000" />
+      <workItem from="1623331172921" duration="118000" />
+      <workItem from="1623331462101" duration="135000" />
+      <workItem from="1623331663183" duration="2000" />
     </task>
     <servers />
   </component>
