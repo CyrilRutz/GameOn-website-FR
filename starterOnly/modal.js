@@ -20,11 +20,6 @@ const lastName = modalbg.querySelector ('#last');
 const birthDate = modalbg.querySelector ('#birthdate');
 const quantityTournament = modalbg.querySelector ('#quantity');
 const loc1 = modalbg.querySelector ('#location1');
-const loc2 = modalbg.querySelector ('#location2');
-const loc3 = modalbg.querySelector ('#location3');
-const loc4 = modalbg.querySelector ('#location4');
-const loc5 = modalbg.querySelector ('#location5');
-const loc6 = modalbg.querySelector ('#location6');
 const utilisation = modalbg.querySelector ('#checkbox1')
 const dateFormat = /([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))/;
 const numbers = /^[0-9]+$/;
@@ -45,14 +40,18 @@ function closeModal() {
 //validation du formulaire
 modalValidation.addEventListener("click", formValidation);
 function formValidation(send){
-
+    //add error visible attribute
+    formData.forEach(function (currentValue){
+        currentValue.dataset.errorVisible = "false";
+        console.log(formData);
+    });
         const isFirstValid = firstName.value.length >= 3;
         const isLastValid = lastName.value.length >= 3;
         const isEmailValid = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(eMail.value);
         const isBirthdateValid = dateFormat.test(birthDate.value);
         const isQuantityTournamentValid = numbers.test(quantityTournament.value);
         const isLocValid = modalbg.querySelector("input[name=location]:checked") !== null;
-
+        const isUsetermsChecked = utilisation.checked===true;
         const validationArray = [
             {input : firstName,data: isFirstValid},
             {input : lastName,data: isLastValid},
@@ -60,19 +59,18 @@ function formValidation(send){
             {input : birthDate,data: isBirthdateValid},
             {input : quantityTournament,data: isQuantityTournamentValid},
             {input : loc1,data: isLocValid},
-        ]
-       console.log(validationArray);
+            {input : utilisation , data :isUsetermsChecked}
+        ];
         if (validationArray.every((currentValue) => currentValue.data === true)) {
-            console.log("youpi");
+            console.log("merci de votre participation");
             return;
         }
              validationArray.forEach(function (currentValue){
                  if (currentValue.data === false){
-                     currentValue.input.parentNode.setAttribute("data-error-visible",true);
-                 };
+                     currentValue.input.parentNode.dataset.errorVisible = "true";
+                     console.log(formData);
+                 }
              });
-
-
     send.preventDefault();
 
 }
