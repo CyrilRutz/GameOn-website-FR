@@ -183,11 +183,13 @@ main {
   padding-top: 10px;
 }
 
-.modal-body {
+.modal-body, .modal-confirmation{
   padding: 15px 8%;
   margin: 15px auto;
 }
-
+.modal-confirmation{
+  display:block;
+}
 label {
   font-family: var(--font-default);
   font-size: 17px;
