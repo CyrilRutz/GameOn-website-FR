@@ -10,9 +10,9 @@ function editNav() {
 // DOM Elements
 const modalbg = document.querySelector(".bground");
 const modalForm = document.querySelector(".modal-body")
+const thankYou = document.querySelector(".modal-confirmation")
 const modalBtn = document.querySelectorAll(".modal-btn");
 const formData = document.querySelectorAll(".formData");
-//ce que j'ai ajouté 
 const modalClose = modalbg.querySelector(".close");
 const modalValidation = modalbg.querySelector(".btn-submit");
 const firstName = modalbg.querySelector ('#first');
@@ -37,10 +37,14 @@ function launchModal() {
 modalClose.addEventListener("click", closeModal);
 function closeModal() {
     modalbg.style.display = "none";
+
 }
+
 function closeForm() {
     modalForm.style.display = "none";
-};
+    thankYou.style.display = "block";
+
+}
 //validation du formulaire
 modalValidation.addEventListener("click", formValidation);
 
@@ -55,7 +59,7 @@ function formValidation(send){
     const isBirthdateValid = dateFormat.test(birthDate.value);
     const isQuantityTournamentValid = numbers.test(quantityTournament.value);
     const isLocValid = modalbg.querySelector("input[name=location]:checked") !== null;
-    const isUsetermsChecked = utilisation.checked===true;
+    const isUseTermsChecked = utilisation.checked===true;
     const validationArray = [
         {input : firstName,data: isFirstValid},
         {input : lastName,data: isLastValid},
@@ -63,38 +67,29 @@ function formValidation(send){
         {input : birthDate,data: isBirthdateValid},
         {input : quantityTournament,data: isQuantityTournamentValid},
         {input : loc1,data: isLocValid},
-        {input : utilisation , data :isUsetermsChecked}
+        {input : utilisation , data :isUseTermsChecked}
     ];
 
-
     if (validationArray.every((currentValue) => currentValue.data === true)) {
-
-        /*
-         Si tout se passe bien
-            - Réinitialiser les champs du formulaire
-            - Fermer la modal
-         */
 
         closeForm();
         clearFormInputs();
         return;
     }
-
-    // Appel de la fonction d'affichage des erreurs
-    showErrorMessages(validationArray)
+    showErrorMessages(validationArray);
 
 }
-// Fonction responsable de rétirer les messages d'erreur
+// Retirer les messages d'erreur
 function clearErrorMessages(formInputs){
     formInputs.forEach(function (currentValue){
         currentValue.dataset.errorVisible = "false";
     });
 }
-//Fonction responsable d'afficher les erreurs
+//Afficher les erreurs
 function showErrorMessages(validateArray){
     validateArray.forEach(function (currentValue){
         if (currentValue.data === false){
-            currentValue.input.parentNode.dataset.errorVisible = "true";
+            currentValue.input.closest(".formData").dataset.errorVisible = "true";
         }
     });
 }
