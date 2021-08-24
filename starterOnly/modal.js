@@ -14,7 +14,7 @@ const thankYou = document.querySelector(".modal-confirmation")
 const modalBtn = document.querySelectorAll(".modal-btn");
 const formData = document.querySelectorAll(".formData");
 const modalClose = modalbg.querySelector(".close");
-const modalValidation = modalbg.querySelector(".btn-submit");
+const modalValidation = modalbg.querySelector("form[name=reserve]");
 const firstName = modalbg.querySelector ('#first');
 const eMail = modalbg.querySelector ('#email');
 const lastName = modalbg.querySelector ('#last');
@@ -37,16 +37,15 @@ function launchModal() {
 modalClose.addEventListener("click", closeModal);
 function closeModal() {
     modalbg.style.display = "none";
-
 }
 
 function closeForm() {
     modalForm.style.display = "none";
-    thankYou.style.display = "block";
+    thankYou.style.display = "flex";
 
 }
 //validation du formulaire
-modalValidation.addEventListener("click", formValidation);
+modalValidation.addEventListener("submit", formValidation);
 
 function formValidation(send){
     send.preventDefault();
