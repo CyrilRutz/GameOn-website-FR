@@ -11,10 +11,11 @@ function editNav() {
 const modalbg = document.querySelector(".bground");
 const modalForm = document.querySelector(".modal-body")
 const thankYou = document.querySelector(".modal-confirmation")
+const thankYouBtn = document.querySelector(".thankyou-btn")
 const modalBtn = document.querySelectorAll(".modal-btn");
 const formData = document.querySelectorAll(".formData");
 const modalClose = modalbg.querySelector(".close");
-const modalValidation = modalbg.querySelector("form[name=reserve]");
+const form = modalbg.querySelector("form[name=reserve]");
 const firstName = modalbg.querySelector ('#first');
 const eMail = modalbg.querySelector ('#email');
 const lastName = modalbg.querySelector ('#last');
@@ -42,13 +43,12 @@ function closeModal() {
 function closeForm() {
     modalForm.style.display = "none";
     thankYou.style.display = "flex";
-
 }
-//validation du formulaire
-modalValidation.addEventListener("submit", formValidation);
+thankYouBtn.addEventListener("click",closeModal)
 
-function formValidation(send){
-    send.preventDefault();
+//validation du formulaire
+form.addEventListener("submit",function(formValidation) {
+    formValidation.preventDefault();
 
     // Effacer les messages d'erreurs
     clearErrorMessages(formData);
@@ -77,7 +77,7 @@ function formValidation(send){
     }
     showErrorMessages(validationArray);
 
-}
+});
 // Retirer les messages d'erreur
 function clearErrorMessages(formInputs){
     formInputs.forEach(function (currentValue){
